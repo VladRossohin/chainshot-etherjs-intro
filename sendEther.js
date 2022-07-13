@@ -1,3 +1,4 @@
+require("dotenv").config();
 const ethers = require("ethers");
 
 async function main() {
@@ -5,8 +6,7 @@ async function main() {
 
   const provider = new ethers.providers.JsonRpcProvider(url);
 
-  const privateKey =
-    "3b712ffa863a8770cb6d4e2d5258119bf59a83b321d96ec54365e4e68a31cbfa";
+  const privateKey = process.env.ADDRESS_PRIVATE_KEY;
 
   const wallet = new ethers.Wallet(privateKey, provider);
 
